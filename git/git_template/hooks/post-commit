@@ -1,0 +1,13 @@
+#!/bin/sh
+
+lolcommits || exit
+
+LOLCOMMITS_DIR=~/.lolcommits/imgs
+export LOLCOMMITS_DIR
+lolcommits --capture --fork --stealth --delay 1
+
+sleep 2
+
+LOLCOMMITS_DIR=~/.lolcommits/gifs
+export LOLCOMMITS_DIR
+lolcommits --capture --fork --stealth --delay 1 --animate 2

@@ -1,0 +1,19 @@
+[user]
+	name = Ernando Silva
+	email = ernandojs@icloud.com
+[push]
+	default = current
+[pull]
+	rebase = true
+[init]
+	templatedir = ~/.git/git_template
+[core]
+	editor = vim
+	excludesfile = ~/.git/ignore
+[color]
+	ui = yes
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
