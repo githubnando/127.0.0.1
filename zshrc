@@ -38,7 +38,7 @@ alias slack-me="mogrify -resize 128x128 -unsharp 2x1.4+0.5+0 -quality 100 -verbo
 alias last-test-file='find tests -xdev -type f -print0 | xargs -0 stat -f "%m%t%Sm %N" | sort -rn | head -n 1 | cut -d" " -f5'
 alias kill-me-now='git branch --merged | egrep -v "(^\*|master|develop)" | xargs git branch -d'
 alias personal='ln -sf ~/.ssh/personal ~/.ssh/id_rsa'
-alias work='ln -sf ~/.ssh/personal ~/.ssh/id_rsa'
+alias work='ln -sf ~/.ssh/work ~/.ssh/id_rsa'
 alias zz='source ~/.zshrc'
 
 
