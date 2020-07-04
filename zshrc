@@ -7,14 +7,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 . $ZSH/oh-my-zsh.sh
 . ~/.nicom-aliases
 
-function title() {
-  echo -ne "\e]0;${PWD##*/}\a"
-}
-
-function project () {
-    cd /Users/ernando.desouzasilva/projects/$1
-    title
-}
+function title { echo -ne "\e]0;${PWD##*/}\a" }
+function project { cd /Users/ernando.desouzasilva/projects/$1 && title }
+function cpc { mkdir -p $2 && cp $1 $2}
 
 add-zsh-hook precmd title
 
@@ -40,5 +35,11 @@ alias kill-me-now='git branch --merged | egrep -v "(^\*|master|develop)" | xargs
 alias personal='ln -sf ~/.ssh/personal ~/.ssh/id_rsa'
 alias work='ln -sf ~/.ssh/work ~/.ssh/id_rsa'
 alias zz='source ~/.zshrc'
+
+
+#############################
+##### ENHANCED COMMANDS #####
+#############################
+
 
 
