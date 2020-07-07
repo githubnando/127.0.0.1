@@ -20,8 +20,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh"
 function title { echo -ne "\e]0;${PWD##*/}\a" }
 function project { cd /Users/ernando.desouzasilva/projects/$1 && title }
 function cpc { mkdir -p $2 && cp $1 "$2/$1"}
-function personal { killall ssh-agent; eval $(ssh-agent -s); ssh-add ~/.ssh/personal}
-function work { killall ssh-agent; eval $(ssh-agent -s); ssh-add ~/.ssh/work}
+function refresh-agent { killall ssh-agent; eval $(ssh-agent -s); ssh-add ~/.ssh/$1 }
 
 add-zsh-hook precmd title
 
@@ -46,4 +45,5 @@ alias last-test-file='find tests -xdev -type f -print0 | xargs -0 stat -f "%m%t%
 alias kill-me-now='git branch --merged | egrep -v "(^\*|master|develop)" | xargs git branch -d'
 alias zz='source ~/.zshrc'
 alias gbr='git checkout master && git branch @{-1} -D'
-
+alias personal='refresh-agent personal'
+alias work='refresh-agent work'
