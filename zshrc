@@ -24,7 +24,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh"
 
 function title { echo -ne "\e]0;${PWD##*/}\a" }
 function project { cd /Users/ernando.desouzasilva/projects/$1 && title }
-function cpc { mkdir -p $2 && cp $1 $2}
+function cpc { mkdir -p $2 && cp $1 "$2/$1"}
 
 add-zsh-hook precmd title
 
@@ -48,3 +48,4 @@ alias slack-me="mogrify -resize 128x128 -unsharp 2x1.4+0.5+0 -quality 100 -verbo
 alias last-test-file='find tests -xdev -type f -print0 | xargs -0 stat -f "%m%t%Sm %N" | sort -rn | head -n 1 | cut -d" " -f5'
 alias kill-me-now='git branch --merged | egrep -v "(^\*|master|develop)" | xargs git branch -d'
 alias zz='source ~/.zshrc'
+alias gbr='git checkout master && git branch @{-1} -D'
