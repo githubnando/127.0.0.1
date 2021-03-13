@@ -1,0 +1,9 @@
+heredoc> #!/bin/sh
+
+LOLCOMMITS_DIR=~/Downloads/lolcommits/imgs; export LOLCOMMITS_DIR
+lolcommits --capture --stealth --fork --delay 1 --device /dev/video2 &
+
+sleep 4
+
+LOLCOMMITS_DIR=~/Downloads/lolcommits/gifs; export LOLCOMMITS_DIR
+lolcommits --capture --stealth --fork --delay 2 --animate 2 --device /dev/video2 &
