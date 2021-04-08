@@ -47,3 +47,4 @@ alias gbr='git checkout master && git branch @{-1} -D'
 alias personal='refresh-agent personal'
 alias work='refresh-agent work'
 alias slack-me="mogrify -resize 128x128 -unsharp 2x1.4+0.5+0 -quality 100 -verbose"
+alias pipipi-popopo='g commit -m "$(curl --silent http://whatthecommit.com/index.txt)'
