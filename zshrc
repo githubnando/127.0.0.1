@@ -2,29 +2,40 @@
 #### GENERAL ####
 #################
 
-export ZSH="/Users/ernando.desouzasilva/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="spaceship"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#41A4A8,bold,underline"
 DISABLE_AUTO_TITLE="true"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(
+    git zsh-autosuggestions
+    zsh-syntax-highlighting
+    alias-tips
+)
+
 
 test -e "${HOME}/.iterm2_shell_integration.zsh"
 . "${HOME}/.iterm2_shell_integration.zsh"
 . $ZSH/oh-my-zsh.sh
-. ~/.nicom-aliases
+. $ZSH/custom/themes/spaceship.zsh-theme
 
 ###################
 #### FUNCTIONS ####
 ###################
+function project { 
+    cd /Users/${user}/projects/$1 && title 
+}
 
-function title { echo -ne "\e]0;${PWD##*/}\a" }
-function project { cd /Users/ernando.desouzasilva/projects/$1 && title }
-function cpc { mkdir -p $2 && cp $1 "$2/$1"}
-function refresh-agent { killall ssh-agent; eval $(ssh-agent -s); ssh-add ~/.ssh/$1 }
+function cpc { 
+    mkdir -p $2 && cp $1 "$2/$1"
+}
+
+function refresh-agent {
+    killall ssh-agent; eval $(ssh-agent -s); ssh-add ~/.ssh/$1
+}
 
 add-zsh-hook precmd title
 
-################
+################˛
 #### DOCKER ####
 ################
 
@@ -47,4 +58,4 @@ alias gbr='git checkout master && git branch @{-1} -D'
 alias personal='refresh-agent personal'
 alias work='refresh-agent work'
 alias slack-me="mogrify -resize 128x128 -unsharp 2x1.4+0.5+0 -quality 100 -verbose"
-alias pipipi-popopo='g commit -m "$(curl --silent http://whatthecommit.com/index.txt)'
+alias pipipi-popopo='g commit -m "$(curl --silent https://whatthecommit.com/index.txt)"'
