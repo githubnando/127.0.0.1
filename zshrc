@@ -3,11 +3,13 @@
 #################
 
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR="/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
 ZSH_THEME="spaceship"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#41A4A8,bold,underline"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#41A4A8,bold,underline"
 DISABLE_AUTO_TITLE="true"
 plugins=(
-    git zsh-autosuggestions
+    git 
+	# zsh-autosuggestions
     zsh-syntax-highlighting
     alias-tips
 )
