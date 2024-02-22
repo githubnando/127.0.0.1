@@ -4,6 +4,7 @@
 
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
+export PATH=$PATH:$HOME/.composer/vendor/bin
 ZSH_THEME="spaceship"
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#41A4A8,bold,underline"
 DISABLE_AUTO_TITLE="true"
