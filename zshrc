@@ -8,6 +8,7 @@ export PATH=$PATH:$HOME/.composer/vendor/bin
 ZSH_THEME="spaceship"
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#41A4A8,bold,underline"
 DISABLE_AUTO_TITLE="true"
+
 plugins=(
     git 
 	# zsh-autosuggestions
@@ -24,8 +25,12 @@ test -e "${HOME}/.iterm2_shell_integration.zsh"
 ###################
 #### FUNCTIONS ####
 ###################
-function project { 
-    cd /Users/${user}/projects/$1 && title 
+function prj { 
+	cd /Users/macnando/Documents/Projects/Coding/personal/$1 && title
+}
+
+function prw { 
+	cd /Users/macnando/Work/Hostdime/$1 && title
 }
 
 function cpc { 
