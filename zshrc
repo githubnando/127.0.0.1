@@ -11,7 +11,7 @@ DISABLE_AUTO_TITLE="true"
 
 plugins=(
     git 
-	# zsh-autosuggestions
+	zsh-autosuggestions
     zsh-syntax-highlighting
     alias-tips
 )
