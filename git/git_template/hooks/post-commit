@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
-lolcommits || exit
+lolcommits &> /dev/null || exit
 
-LOLCOMMITS_DIR=~/.lolcommits/imgs; export LOLCOMMITS_DIR
-lolcommits --capture --stealth --fork --delay 1 --device /dev/video2 &
+LOLCOMMITS_DIR=~/.lolcommits/imgs \
+    lolcommits --capture --stealth --fork --delay 1 &> /dev/null &
 
 sleep 2
 
-LOLCOMMITS_DIR=~/.lolcommits/gifs; export LOLCOMMITS_DIR
-lolcommits --capture --stealth --fork --delay 1 --device /dev/video2 &
+LOLCOMMITS_DIR=~/.lolcommits/gifs \
+    lolcommits --capture --stealth --fork --delay 1 --animate 3 &> /dev/null &
